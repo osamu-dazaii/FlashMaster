@@ -780,3 +780,433 @@
     }
   }
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Admin Panel Styles */
+.quick-actions {
+    margin-top: 30px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.data-table {
+    width: 100%;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-top: 20px;
+}
+
+.data-table th,
+.data-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.data-table th {
+    background: #f8f9fa;
+    font-weight: 600;
+}
+
+.action-cell {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-icon {
+    padding: 5px 10px;
+    font-size: 0.9em;
+}
+
+.btn-danger {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: var(--accent-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Add these styles */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.edit-form {
+    background: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.card-form .input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+.form-actions {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Edit Form Styles */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.edit-form {
+    background: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.user-stats {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.stat-item {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+.stat-item label {
+    display: block;
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.stat-item span {
+    font-size: 1.2em;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.form-actions {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+
+
+/* Add these to your existing CSS */
+.color-input {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.color-input input[type="color"] {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+.color-value {
+    font-family: monospace;
+    color: var(--dark-color);
+}
+
+.theme-stats {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.stat-item {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-item span {
+    font-size: 1.2em;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Quiz Start Page */
+.quiz-start {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.difficulty-options {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* Quiz Game Page */
+.quiz-game {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.quiz-progress {
+    margin-bottom: 30px;
+}
+
+.quiz-card {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 30px;
+    text-align: center;
+}
+
+.card-image {
+    margin: 20px 0;
+}
+
+.card-image img {
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+}
+
+.answer-form {
+    display: grid;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* Quiz Results Page */
+.quiz-results {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.score-card {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.score-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: conic-gradient(
+        var(--primary-color) calc(var(--percentage) * 1%),
+        #eee calc(var(--percentage) * 1%)
+    );
+}
+
+.answers-review {
+    margin-top: 40px;
+}
+
+.answer-item {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 15px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid #95a5a6;
+}
+
+.answer-item.correct {
+    border-left: 4px solid var(--secondary-color);
+}
+
+.answer-item.incorrect {
+    border-left: 4px solid #e74c3c;
+}
+
+.answer-text {
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.answer-item.correct .answer-text {
+    color: var(--secondary-color);
+}
+
+.answer-item.incorrect .answer-text {
+    color: var(--accent-color);
+}
+
+
+
+
+
+
+
+
+
