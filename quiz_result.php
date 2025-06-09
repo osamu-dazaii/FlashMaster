@@ -48,30 +48,21 @@ $percentage = ($correct_count / 20) * 100;
             </div>
 
             <div class="answers-review">
-                <h2>Review Your Answers</h2>
-                <?php foreach ($quiz['answers'] as $index => $answer): 
-                    $card = $quiz['cards'][$index];
-                ?>
-                    <div class="answer-item <?= $answer['correct'] ? 'correct' : 'incorrect' ?>">
-                        <div class="question-info">
-                            <img src="<?= htmlspecialchars($card['image_url']) ?>" 
-                                 alt="Question Image">
-                            <div class="theme-tag">
-                                <?= htmlspecialchars($card['theme_name']) ?>
-                            </div>
-                        </div>
-                        <div class="answer-details">
-                            <div class="selected-answer">
-                                Your answer: <?= htmlspecialchars($answer['selected']) ?>
-                            </div>
-                            <?php if (!$answer['correct']): ?>
-                                <div class="correct-answer">
-                                    Correct answer: <?= htmlspecialchars($card['correct_answer']) ?>
+                <h2>Quiz Answers</h2>
+                <div class="answers-list">
+                    <?php foreach ($quiz['answers'] as $index => $answer): 
+                        $card = $quiz['cards'][$index];
+                    ?>
+                        <div class="answer-item <?= $answer['correct'] ? 'correct' : 'incorrect' ?>">
+                            <div class="answer-details">
+                                <div class="theme-label">Theme: <?= htmlspecialchars($card['theme_name']) ?></div>
+                                <div class="answer-text">
+                                    <?= htmlspecialchars($card['correct_answer']) ?>
                                 </div>
-                            <?php endif; ?>
+                            </div>
                         </div>
-                    </div>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
+                </div>
             </div>
 
             <div class="quiz-actions">
