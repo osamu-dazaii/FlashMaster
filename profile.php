@@ -9,6 +9,18 @@ if (!isset($_SESSION['user_id'])) {
 
 $user_id = $_SESSION['user_id'];
 $user_stats = getUserStats($user_id);
+
+// Get user's quiz history
+$stmt = $conn->prepare("
+    SELECT *
+    FROM user_quiz_results
+    WHERE user_id = ?
+    ORDER BY completed_at DESC
+    LIMIT 10
+");
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$quiz_history = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,6 +41,8 @@ $user_stats = getUserStats($user_id);
       <a href="dashboard.php"><i class="fas fa-home"></i> Home</a>
       <a href="profile.php" class="active"><i class="fas fa-user"></i> Profile</a>
       <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      <a href="quiz_start.php"><i class="fas fa-question-circle"></i> Quiz</a>
+
     </nav>
   </header>
 
@@ -97,6 +111,33 @@ $user_stats = getUserStats($user_id);
           </div>
         <?php endforeach; ?>
       </div>
+    </section>
+
+    <section class="quiz-history">
+        <h2><i class="fas fa-history"></i> Recent Quizzes</h2>
+        <?php if (empty($quiz_history)): ?>
+            <p class="no-data">No quizzes taken yet.</p>
+        <?php else: ?>
+            <div class="history-cards">
+                <?php foreach ($quiz_history as $quiz): ?>
+                    <div class="history-card">
+                        <div class="quiz-info">
+                            <span class="difficulty <?= $quiz['difficulty'] == 1 ? 'easy' : 'hard' ?>">
+                                <?= $quiz['difficulty'] == 1 ? 'Easy' : 'Hard' ?>
+                            </span>
+                            <span class="date">
+                                <?= date('M j, Y g:i A', strtotime($quiz['completed_at'])) ?>
+                            </span>
+                        </div>
+                        <div class="score">
+                            <strong><?= $quiz['score'] ?>/<?= $quiz['total_questions'] ?></strong>
+                            (<?= round(($quiz['score']/$quiz['total_questions'])*100) ?>%)
+                        </div>
+                        
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
     </section>
   </main>
 
