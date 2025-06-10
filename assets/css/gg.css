@@ -1207,6 +1207,71 @@
 
 
 
+/* Quiz History Section Styles */
+.quiz-history {
+  margin-top: 2rem;
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.07);
+}
 
+.history-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
 
+.history-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.2rem 1.5rem;
+  transition: box-shadow 0.2s;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}
 
+.history-card:hover {
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.07);
+}
+
+.quiz-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.difficulty {
+  display: inline-block;
+  padding: 0.3rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 0.2rem;
+}
+
+.difficulty.easy {
+  background: #40c057;
+}
+
+.difficulty.hard {
+  background: #fa5252;
+}
+
+.date {
+  color: #868e96;
+  font-size: 0.97rem;
+  margin-left: 2px;
+}
+
+.score {
+  font-weight: 600;
+  color: #222;
+  font-size: 1.1rem;
+  min-width: 110px;
+  text-align: right;
+}
